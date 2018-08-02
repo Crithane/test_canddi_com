@@ -1,0 +1,14 @@
+version: "3"
+services:  
+    test_canddi_nginx:
+        build:
+            context: docker/nginx/
+        volumes:
+            - ./:/usr/src/app
+        ports:
+            - 80:80
+    test_canddi_jekyll:
+        build:
+            context: .
+        volumes:
+            - .:/usr/src/app
